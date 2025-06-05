@@ -1,0 +1,17 @@
+@model Scheduler.Web.Models.ScheduleItem
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Create Schedule</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name)
+    <br />
+    @Html.CheckBoxFor(m => m.IsImmediate) Immediate
+    <br />
+    @Html.LabelFor(m => m.ScheduledTime)
+    @Html.TextBoxFor(m => m.ScheduledTime, new { type = "datetime-local" })
+    <br />
+    <input type="submit" value="Create" />
+}
