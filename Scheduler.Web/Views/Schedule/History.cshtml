@@ -1,0 +1,20 @@
+@model IEnumerable<Scheduler.Web.Models.ScheduleRecord>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Schedule History</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Time</th>
+        <th>Result</th>
+    </tr>
+@foreach (var record in Model)
+{
+    <tr>
+        <td>@record.Item.Name</td>
+        <td>@record.Log.ExecutionTime</td>
+        <td>@record.Log.Result</td>
+    </tr>
+}
+</table>
